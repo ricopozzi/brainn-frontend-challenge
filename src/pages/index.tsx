@@ -170,6 +170,7 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
                   <Ball
                     classy='flex justify-center mt-10 items-center lg:hidden w-[3.5rem] h-[3.5rem]'
                     number={item}
+                    key={item}
                   />
                 ))}
               </div>
