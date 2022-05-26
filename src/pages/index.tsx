@@ -1,16 +1,9 @@
-import type {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetStaticProps,
-  NextPage,
-} from "next";
-import Head from "next/head";
-import Image from "next/image";
+import type { GetStaticProps, NextPage } from "next";
 import { Listbox } from "@headlessui/react";
 import { useState, useEffect } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import { Ball } from "../components/Ball";
-import { useFetch } from "../lib/api";
+import { Fetcher } from "../lib/api";
 
 const Home: NextPage = ({ loterias, concursosId }: any) => {
   const [selectedConcurso, setSelectedConcurso] = useState(loterias[0].nome);
@@ -28,7 +21,7 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
       (item: any) => item.loteriaId === findId.id
     );
 
-    const response = await useFetch(`/concursos/${findConcursoId.concursoId}`);
+    const response = await Fetcher(`/concursos/${findConcursoId.concursoId}`);
 
     return setConcurso(response);
   };
@@ -195,8 +188,8 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const loteriasResponse = await useFetch("/loterias");
-  const concursosIdResponse = await useFetch("/loterias-concursos");
+  const loteriasResponse = await Fetcher("/loterias");
+  const concursosIdResponse = await Fetcher("/loterias-concursos");
 
   return {
     props: {
