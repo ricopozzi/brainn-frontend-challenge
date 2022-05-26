@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root{
+    --background-color-concurso: #6BEFA3
+  }
+
+  .megasena{
+  --background-color-concurso: #6BEFA3
+
+  }
+  .quina{
+    --background-color-concurso: #8666EF
+  
+    }
+  .lotofacil{
+  --background-color-concurso: #DD7AC6
+
+  }
+  .lotomania{
+    --background-color-concurso: #FFAB64
+  
+    }
+  .timemania{
+      --background-color-concurso: #5AAD7D
+    
+    }
+  .diadesorte{
+      --background-color-concurso: #BFAF83
+    
+      }
+  
+
+  body{
+    overflow: hidden
+  }
+}
