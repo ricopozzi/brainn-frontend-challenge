@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Exercício de Front-end da Brainn
 
-## Getting Started
+O objetivo é construir uma aplicação web front-end que mostre os Resultados das Loterias.
 
-First, run the development server:
+## Introdução
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+A proposta do exercício de front-end da **Brainn** é ser simples e divertido.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Detalhe
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Para fazer esse teste eu utilizei:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Typescript
+- React Js
+- NextJs
+- SSG (Static Site Generation)
+- Hospedagem Vercel
+- Tailwind CSS
+- Headless UI
+- Cypress
+- Axios
+- Array Methods
+- Custom React Hook
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Recursos
 
-## Learn More
+- Layout: https://www.figma.com/file/H2qrYBCFMf4didYmxRwTxP/Brainn-Frontend-Challenge
+- API: https://brainn-api-loterias.herokuapp.com
+- Tipografia (webfont): [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
-To learn more about Next.js, take a look at the following resources:
+### Requisitos & Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- A aplicação terá que suportar **6 sorteios**: `Mega-sena`, `Quina`, `Lotofácil`, `Lotomania`, `Timemania` e `Dia de sorte` ✅
+- Todos esses sorteios estarão em um combo-box/select ✅
+- Ao mudar esse combo-box, terá que mudar o **tema do sorteio**, **número do sorteio**, **data do sorteio** e **números sorteados** ✅
+- A aplicação terá que ser responsiva, pelo menos para celulares, conforme layout ✅
+- O consumo da API pode ser feito via REST ou GraphQL ✅
+- Criar rotas com React Router DOM (opcional) ( Optei por usar NextJs, que já cuida do roteamento ) ✅
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Tecnologias esperadas
 
-## Deploy on Vercel
+- React com TypeScript ✅
+- Testes com React Testing Library e/ou Cypress ✅
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Dúvidas
+
+Se você possui alguma dúvida sobre o desafio, você pode entrar em contato por e-mail com o recrutamento que já estará acompanhando seu processo ou através do e-mail mariana@brainn.co.
+
+<br>
+
+## Caso tenha finalizado e...
+
+#### → Já está participando do processo
+
+Basta sinalizar por e-mail que finalizou o exercício para darmos continuidade ao processo.
+
+#### → Ainda não está participando do processo
+
+Basta enviar o link do seu teste para mariana@brainn.co para quem sabe chamarmos você para um bate-papo 😊

@@ -1,6 +1,7 @@
 import type {
   GetServerSideProps,
   GetServerSidePropsContext,
+  GetStaticProps,
   NextPage,
 } from "next";
 import Head from "next/head";
@@ -194,13 +195,9 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
+export const getStaticProps: GetStaticProps = async () => {
   const loteriasResponse = await useFetch("/loterias");
   const concursosIdResponse = await useFetch("/loterias-concursos");
-
-  console.log(loteriasResponse, concursosIdResponse);
 
   return {
     props: {
