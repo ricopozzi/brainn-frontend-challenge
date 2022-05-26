@@ -21,6 +21,17 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
     numeros: ["XX"],
     data: "2021-04-20T00:28:09.426Z",
   });
+  const handleConcurso = async () => {
+    const findId = loterias.find((item: any) => item.nome === selectedConcurso);
+
+    const findConcursoId = concursosId.find(
+      (item: any) => item.loteriaId === findId.id
+    );
+
+    const response = await useFetch(`/concursos/${findConcursoId.concursoId}`);
+
+    return setConcurso(response);
+  };
 
   useEffect(() => {
     handleConcurso();
@@ -48,18 +59,6 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
         break;
     }
   }, [selectedConcurso]);
-
-  const handleConcurso = async () => {
-    const findId = loterias.find((item: any) => item.nome === selectedConcurso);
-
-    const findConcursoId = concursosId.find(
-      (item: any) => item.loteriaId === findId.id
-    );
-
-    const response = await useFetch(`/concursos/${findConcursoId.concursoId}`);
-
-    return setConcurso(response);
-  };
 
   return (
     <>
