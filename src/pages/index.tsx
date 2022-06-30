@@ -4,14 +4,17 @@ import { useState, useEffect } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import { Ball } from "../components/Ball";
 import { Fetcher } from "../lib/api";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { TailSpin } from "react-loader-spinner";
 
 const Home: NextPage = ({ loterias, concursosId }: any) => {
   const [selectedConcurso, setSelectedConcurso] = useState(loterias[0].nome);
   const [theme, setTheme] = useState("megasena");
+  const [loading, setIsLoading] = useState(true);
   const [concurso, setConcurso] = useState<any>({
     id: "XXX",
     loteria: 1,
-    numeros: ["XX"],
+    numeros: [],
     data: "2021-04-20T00:28:09.426Z",
   });
   const handleConcurso = async () => {
@@ -28,6 +31,7 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
 
   useEffect(() => {
     handleConcurso();
+    setIsLoading(false);
     switch (selectedConcurso) {
       case loterias[0].nome:
         setTheme("megasena");
@@ -102,13 +106,17 @@ const Home: NextPage = ({ loterias, concursosId }: any) => {
         </div>
 
         <div className='h-1/3 flex gap-10 gap-y-3 w-full  ml-auto my-auto justify-center flex-wrap items-center'>
-          {concurso.numeros.map((item: any) => (
-            <Ball
-              classy='justify-center items-center hidden lg:flex left-10 w-20 h-20 xl:w-28 xl:h-28'
-              number={item}
-              key={item}
-            />
-          ))}
+          {loading ? (
+            <TailSpin color='#00BFFF' height={80} width={80} />
+          ) : (
+            concurso.numeros.map((item: any) => (
+              <Ball
+                classy='justify-center items-center hidden lg:flex left-10 w-20 h-20 xl:w-28 xl:h-28'
+                number={item}
+                key={item}
+              />
+            ))
+          )}
         </div>
         <p className='font-medium font-montserrat mt-auto text-center absolute bottom-20 left-[50%]'>
           Este sorteio é meramente ilustrativo e não possui nenhuma ligação com
